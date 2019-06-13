@@ -21,7 +21,7 @@ gmaps_key=googlemaps.Client(key = "AIzaSyBe6WcFrCAuPkS0R2Ab_2ZZFLEnlUJgdO0")
 #now = datetime.now()
 #timestamp = datetime.timestamp(now)
 
-n=12
+n=1
 while(n!=16):
 	
 	sleep(2)
@@ -41,20 +41,20 @@ while(n!=16):
 			city=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]/ul[1]/li[" + str(x) + "]/div/div/div[2]/a/div[3]/span[1]/span')
 			area=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]/ul[1]/li[" + str(x) + "]/div/div/div[2]/a/div[3]/span[3]/span/span')
 			image=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]/ul[1]/li[" + str(x) + "]/div/div/div[1]/div/div/div/div/ul/li[1]/a/div/img')
-			i=image[num].get_attribute("src")
+			i=image[num].get_attribute("data-src")
 			if '.jpg' in i:
-				def download_image_one(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+				def download_image_one(url,path,timestamp):
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 
 					fullname = path + str(timestamp) + ".jpg"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".jpg"
-				download_image_one(i,"appearherepics/")
+				download_image_one(i,"appearherepics/",timestamp)
 			elif '.png' in i:
 				def download_image_two(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 
 					fullname = path + str(timestamp) + ".png"
 					urllib.request.urlretrieve(url,fullname)
@@ -62,8 +62,8 @@ while(n!=16):
 				download_image_two(i,"appearherepics/")
 			elif '.tif' in i:
 				def download_image_three(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 
 					fullname = path + str(timestamp) + ".tif"
 					urllib.request.urlretrieve(url,fullname)
@@ -71,8 +71,8 @@ while(n!=16):
 				download_image_three(i,"appearherepics/")
 			else:
 				def download_image_four(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 
 					fullname = path + str(timestamp) + ".jpg"
 					urllib.request.urlretrieve(url,fullname)
@@ -80,7 +80,7 @@ while(n!=16):
 				download_image_four("https://www.skprealtors.com/wp-content/uploads/2016/07/not_available.jpg","appearherepics/")
 			sleep(2)
 			country="USA"
-			area_unit="Square Foot"
+			area_unit="Square Feet"
 			pincode="__NA__"
 			e=expected_rent[num].text + str('/day')
 			area=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]/ul[1]/li[" + str(x) + "]/div/div/div[2]/a/div[3]/span[3]/span/span')
@@ -124,17 +124,17 @@ while(n!=16):
 			city=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]/ul[2]/li[" + str(x) + "]/div/div/div[2]/a/div[3]/span[1]/span')
 			area=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]/ul[2]/li[" + str(x) + "]/div/div/div[2]/a/div[3]/span[3]/span/span')
 			image=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]/ul[2]/li[" + str(x) + "]/div/div/div[1]/div/div/div/div/ul/li[1]/a/div/img')
-			i=image[num].get_attribute("src")
+			i=image[num].get_attribute("data-src")
 			country="USA"
-			area_unit="Square Foot"
+			area_unit="Square Feet"
 			e=expected_rent[num].text + str('/day')
 			pincode="__NA__"
 			landmark="__NA__"
 			floor_count="__NA__"
 			if '.jpg' in i:
 				def download_image_one(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 					fullname = path + str(timestamp) + ".jpg"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".jpg"
@@ -142,8 +142,8 @@ while(n!=16):
 				download_image_one(i,"appearherepics/")
 			elif '.png' in i:
 				def download_image_two(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 					fullname = path + str(timestamp) + ".png"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".png"
@@ -151,8 +151,8 @@ while(n!=16):
 				download_image_two(i,"appearherepics/")
 			elif '.tif' in i:
 				def download_image_three(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 					fullname = path + str(timestamp) + ".tif"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".tif"
@@ -160,8 +160,8 @@ while(n!=16):
 				download_image_three(i,"appearherepics/")
 			else:
 				def download_image_four(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 					fullname = path + str(timestamp) + ".jpg"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".jpg"
@@ -214,13 +214,13 @@ for x in range(1, 4):
 		city=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div/div[2]/ul[1]/li[" + str(x) + "]/div/div/div[2]/a/div[3]/span[1]/span')
 		area=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div/div[2]/ul[1]/li[" + str(x) + "]/div/div/div[2]/a/div[3]/span[3]/span/span')
 		image=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div/div[2]/ul[1]/li[" + str(x) + "]/div/div/div[1]/div/div/div/div/ul/li[1]/a/div/img')
-		i=image[num].get_attribute("src")
+		i=image[num].get_attribute("data-src")
 		country="USA"
 		e=expected_rent[num].text + str('/day')
 		pincode="__NA__"
 		landmark="__NA__"
 		floor_count="__NA__"
-		area_unit="Square Foot"
+		area_unit="Square Feet"
 		#area=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div/div[2]/ul[1]/li[" + str(x) + "]/div/div/div[2]/a/div[3]/span[3]/span/span')
 		t=title[num].text
 		c=city[num].text
@@ -233,8 +233,8 @@ for x in range(1, 4):
 		print(l)
 		if '.jpg' in i:
 				def download_image_one(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 					fullname = path + str(timestamp) + ".jpg"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".jpg"
@@ -242,8 +242,8 @@ for x in range(1, 4):
 				download_image_one(i,"appearherepics/")
 		elif '.png' in i:
 				def download_image_two(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 					fullname = path + str(timestamp) + ".png"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".png"
@@ -251,8 +251,8 @@ for x in range(1, 4):
 				download_image_two(i,"appearherepics/")
 		elif '.tif' in i:
 				def download_image_three(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 					fullname = path + str(timestamp) + ".tif"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".tif"
@@ -260,8 +260,8 @@ for x in range(1, 4):
 				download_image_three(i,"appearherepics/")
 		else:
 				def download_image_four(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 					fullname = path + str(timestamp) + ".jpg"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".jpg"
@@ -302,7 +302,7 @@ for x in range(1, 3):
 		city=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div/div[2]/ul[1]/li[" + str(x) + "]/div/div/div[2]/a/div[3]/span[1]/span')
 		area=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div/div[2]/ul[1]/li[" + str(x) + "]/div/div/div[2]/a/div[3]/span[3]/span/span')
 		image=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div/div[2]/ul[1]/li[" + str(x) + "]/div/div/div[1]/div/div/div/div/ul/li[1]/a/div/img')
-		i=image[num].get_attribute("src")
+		i=image[num].get_attribute("data-src")
 		country="USA"
 		e=expected_rent[num].text + str('/day')
 		pincode="__NA__"
@@ -310,8 +310,8 @@ for x in range(1, 3):
 		floor_count='__NA__'
 		if '.jpg' in i:
 				def download_image_one(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 					fullname = path + str(timestamp) + ".jpg"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".jpg"
@@ -319,8 +319,8 @@ for x in range(1, 3):
 				download_image_one(i,"appearherepics/")
 		elif '.png' in i:
 				def download_image_two(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 					fullname = path + str(timestamp) + ".png"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".png"
@@ -328,8 +328,8 @@ for x in range(1, 3):
 				download_image_two(i,"appearherepics/")
 		elif '.tif' in i:
 				def download_image_three(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 					fullname = path + str(timestamp) + ".tif"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".tif"
@@ -337,8 +337,8 @@ for x in range(1, 3):
 				download_image_three(i,"appearherepics/")
 		else:
 				def download_image_four(url,path):
-					now = datetime.now()
-					timestamp = datetime.timestamp(now)
+					#now = datetime.now()
+					#timestamp = datetime.timestamp(now)
 					fullname = path + str(timestamp) + ".jpg"
 					urllib.request.urlretrieve(url,fullname)
 				img="https://appearhererus.s3.eu-central-1.amazonaws.com/appearherepics/"+ str(timestamp) + ".jpg"
@@ -348,7 +348,7 @@ for x in range(1, 3):
 		t=title[num].text
 		ae=area[num].text
 		c=city[num].text
-		area_unit="Square Foot"
+		area_unit="Square Feet"
 		building_name=t
 		street=t[:t.find(",")]
 		link=browser.find_elements_by_xpath('/html/body/div[2]/div/div[2]/div/div/div[1]/div[3]/div/div[2]/ul[1]/li[" + str(x) + "]/div/div/div[1]/div/div/div/div/ul/li[1]/a')
